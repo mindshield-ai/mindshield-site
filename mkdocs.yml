@@ -1,1 +1,8 @@
-site_name: MindShield.ai
+site_name: MindShield
+
+theme:
+  name: simple-blog
+
+
+nav:
+  - Contact: contact.md
