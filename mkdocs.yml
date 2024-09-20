@@ -1,8 +1,4 @@
 site_name: MindShield
-
+site_url: https://mindshield.ai
 theme:
-  name: simple-blog
-
-
-nav:
-  - Contact: contact.md
+  name: material  # Consider using the Material theme for easy customization
