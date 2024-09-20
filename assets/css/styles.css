@@ -2,6 +2,7 @@
 @font-face {
     font-family: 'TT Lakes Neue';
     src: url('assets/fonts/tt-lakes-neue.woff2') format('woff2');
+
 }
 
 body {
@@ -23,7 +24,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */ */
 }
 
 .nav-container {
@@ -39,7 +40,8 @@ header {
 }
 
 .logo-img {
-    width: 250px;
+    width: 320px;
+    margin-top: -30px;
     height: auto;
     transition: transform 0.3s ease-in-out;
 }
