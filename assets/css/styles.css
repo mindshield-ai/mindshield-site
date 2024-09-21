@@ -11,7 +11,6 @@ body {
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
-    overflow-y: hidden; /* Prevents vertical scrolling */
 }
 
 /* Header and Navigation Bar */
@@ -201,29 +200,42 @@ header {
     color: #ff4500; /* Change to orange on hover */
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .logo-img {
-        width: 120px;
+        width: 120px; /* Smaller logo for mobile */
+        margin-top: 0; /* Reset margin for better mobile appearance */
     }
 
     .nav-links {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row; /* Align nav links in a row for mobile */
+        justify-content: center; /* Center the links */
+        gap: 20px; /* Adjust spacing for mobile */
     }
 
+    .nav-links li a {
+        font-size: 16px; /* Slightly smaller font size on mobile */
+        padding: 8px 10px; /* Adjust padding */
+        margin-top: 0; /* Reset margin for mobile */
+    }
+
+    /* Adjustments for the bottom text */
     .bottom-text h1 {
-        font-size: 36px;
+        font-size: 36px; /* Smaller heading on mobile */
     }
 
     .bottom-text p {
-        font-size: 16px;
+        font-size: 16px; /* Smaller paragraph on mobile */
     }
 
     .contact-container {
         padding: 20px;
-        max-width: 90%;
+        max-width: 90%; /* Adjust container width for mobile */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%; /* Ensure form inputs are full-width on mobile */
     }
 }
 
