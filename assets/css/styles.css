@@ -110,11 +110,15 @@ header {
 
 /* Contact Page Styling */
 .contact-section {
-    padding: 150px 20px;
+    padding: 80px 20px; /* Adjusted padding */
     background-color: #000;
     color: #fff;
     text-align: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 160px); /* Adjusted height to avoid scrolling */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
 }
 
 .contact-container {
