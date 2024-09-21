@@ -11,40 +11,35 @@ body {
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
+    overflow-y: hidden; /* Prevents vertical scrolling */
 }
 
 /* Header and Navigation Bar */
 header {
     background-color: transparent;
-    padding: 0;
+    padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    align-items: center; /* Ensure logo and nav links are centered */
 }
 
-/* Navigation container */
 .nav-container {
-    width: 90%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
-/* Logo Styling */
 .logo {
     margin-left: 0;
-    display: inline-block; /* Independent block for the logo */
 }
 
 .logo-img {
     width: 320px;
+    margin-top: -30px;
     height: auto;
     transition: transform 0.3s ease-in-out;
 }
@@ -53,26 +48,21 @@ header {
     transform: scale(1.1);
 }
 
-/* Navigation Links Styling */
 .nav-links {
     list-style-type: none;
     margin: 0;
     display: flex;
     gap: 30px;
-    align-items: center; /* Align nav links with the logo */
-}
-
-.nav-links li {
-    display: inline-block;
+    justify-content: flex-end;
+    flex-grow: 1;
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 15px 15px;
+    padding: 10px 15px;
     transition: color 0.3s ease-in-out;
-    line-height: 80px; /* Align nav links with header height */
 }
 
 .nav-links li a:hover {
@@ -121,15 +111,11 @@ header {
 
 /* Contact Page Styling */
 .contact-section {
-    padding: 80px 20px; /* Adjust padding to reduce unnecessary space */
+    padding: 150px 20px;
     background-color: #000;
     color: #fff;
     text-align: center;
-    height: 100vh; /* Set the height to 100% of the viewport */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically center content */
+    min-height: 100vh;
 }
 
 .contact-container {
@@ -139,7 +125,6 @@ header {
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
-    flex-shrink: 0; /* Ensure the container doesn't shrink */
 }
 
 .contact-container h1 {
@@ -152,11 +137,11 @@ header {
     margin-bottom: 30px;
 }
 
+/* Align text in form to the left */
 .contact-form {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    flex-grow: 1; /* Ensure the form takes the available space */
+    text-align: left; /* Align text to the left */
 }
 
 .contact-form label {
@@ -183,10 +168,10 @@ header {
     border-color: #ff4500;
 }
 
-/* Submit Button Styling */
+/* Submit button styled with gray */
 .contact-form button {
     padding: 12px;
-    background-color: #555; /* Gray color */
+    background-color: #555; /* Gray color for the button */
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -201,36 +186,35 @@ header {
     transform: scale(1.05);
 }
 
-/* Responsive Design for Mobile (max-width: 768px) */
+/* Email link */
+.email-link {
+    color: white !important; /* Force white color for the link */
+    text-decoration: underline; /* Underlined */
+    font-size: 16px;
+}
+
+.email-link:visited {
+    color: white !important; /* Ensure visited links also remain white */
+}
+
+.email-link:hover {
+    color: #ff4500; /* Change to orange on hover */
+}
+
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    /* Adjust logo size for mobile */
     .logo-img {
-        width: 180px;  /* Reduced logo size for smaller screens */
+        width: 120px;
     }
 
     .nav-links {
-        flex-direction: row;
-        gap: 15px; /* Adjusted gap between nav items for mobile */
-        justify-content: center;
-    }
-
-    .nav-links li {
-        display: inline-block;
-        text-align: center;
-    }
-
-    .nav-links li a {
-        padding: 8px 10px; /* Reduce padding on mobile */
-        line-height: 60px; /* Match line-height for mobile header height */
-    }
-
-    /* Adjust video height and text for mobile */
-    .video-background {
-        height: 100vh;  /* Keep the video full-screen */
+        flex-direction: column;
+        gap: 15px;
     }
 
     .bottom-text h1 {
-        font-size: 36px;  /* Smaller font for mobile */
+        font-size: 36px;
     }
 
     .bottom-text p {
@@ -241,14 +225,11 @@ header {
         padding: 20px;
         max-width: 90%;
     }
+}
 
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-    }
-
-    .contact-form button {
-        font-size: 16px;
-        padding: 12px 0;
-    }
+#thank-you-message {
+    display: none;
+    color: #ff4500;
+    font-size: 18px;
+    margin-top: 20px;
 }
