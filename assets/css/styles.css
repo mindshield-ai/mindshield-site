@@ -233,3 +233,99 @@ header {
     font-size: 18px;
     margin-top: 20px;
 }
+
+/* Stronger override for the email link color */
+a.email-link {
+    color: white !important;  /* Force the white color */
+    text-decoration: underline !important;  /* Force the underline */
+}
+
+a.email-link:visited {
+    color: white !important;  /* Ensure visited links also remain white */
+}
+
+a.email-link:hover {
+    color: #ff4500 !important;  /* Change to orange on hover */
+}
+
+a.email-link:active {
+    color: white !important; /* When clicking, it will remain white */
+}
+
+/* Media Query for Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* Adjust logo size */
+    .logo-img {
+        width: 150px;  /* Make the logo smaller on mobile */
+        margin-top: 0;
+    }
+
+    /* Stack navigation links vertically */
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .nav-links li a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    /* Adjust the video background height */
+    .video-background {
+        height: 60vh;  /* Reduce video height on mobile */
+    }
+
+    /* Resize and align the text in the video section */
+    .bottom-text {
+        bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .bottom-text h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .bottom-text p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    /* Contact form container should be full width */
+    .contact-container {
+        padding: 20px;
+        max-width: 100%;  /* Full width on mobile */
+        margin: 0 auto;
+    }
+
+    /* Form inputs should be full width */
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;  /* Ensure inputs take full width on mobile */
+    }
+
+    /* Adjust submit button size and padding */
+    .contact-form button {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    /* Adjust font size in form */
+    .contact-form label {
+        font-size: 16px;
+    }
+
+    /* Increase spacing in the contact section */
+    .contact-section {
+        padding: 100px 20px;
+    }
+
+    /* General body adjustments for mobile */
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
