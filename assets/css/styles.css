@@ -11,50 +11,60 @@ body {
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
-    overflow-y: hidden; /* Prevents vertical scrolling */
+    overflow-y: auto;
 }
 
 /* Header and Navigation Bar */
 header {
     background-color: transparent;
-    padding: 20px 0;
+    padding: 0; /* Remove extra padding to ensure alignment */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensure vertical alignment */
+    height: 70px; /* Fixed height for the header */
 }
 
+/* Navigation container */
 .nav-container {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    margin: 0 auto;
 }
 
+/* Logo Styling */
 .logo {
     margin-left: 0;
 }
 
 .logo-img {
-    width: 320px;
-    margin-top: -30px;
+    width: 320px; /* Default for desktop */
     height: auto;
     transition: transform 0.3s ease-in-out;
+    display: block;
 }
 
 .logo-img:hover {
     transform: scale(1.1);
 }
 
+/* Navigation Links Styling */
 .nav-links {
     list-style-type: none;
     margin: 0;
     display: flex;
     gap: 30px;
-    justify-content: flex-end;
-    flex-grow: 1;
+    align-items: center; /* Align links vertically with the logo */
+}
+
+.nav-links li {
+    display: inline-block;
 }
 
 .nav-links li a {
@@ -63,6 +73,7 @@ header {
     font-size: 18px;
     padding: 10px 15px;
     transition: color 0.3s ease-in-out;
+    line-height: 70px; /* Match the line height with the header */
 }
 
 .nav-links li a:hover {
@@ -137,11 +148,10 @@ header {
     margin-bottom: 30px;
 }
 
-/* Align text in form to the left */
 .contact-form {
     display: flex;
     flex-direction: column;
-    text-align: left; /* Align text to the left */
+    text-align: left;
 }
 
 .contact-form label {
@@ -168,10 +178,10 @@ header {
     border-color: #ff4500;
 }
 
-/* Submit button styled with gray */
+/* Submit Button Styling */
 .contact-form button {
     padding: 12px;
-    background-color: #555; /* Gray color for the button */
+    background-color: #555; /* Gray color */
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -186,146 +196,54 @@ header {
     transform: scale(1.05);
 }
 
-/* Email link */
-.email-link {
-    color: white !important; /* Force white color for the link */
-    text-decoration: underline; /* Underlined */
-    font-size: 16px;
-}
-
-.email-link:visited {
-    color: white !important; /* Ensure visited links also remain white */
-}
-
-.email-link:hover {
-    color: #ff4500; /* Change to orange on hover */
-}
-
-
-/* Responsive Design */
+/* Responsive Design for Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+    /* Adjust logo size for mobile */
     .logo-img {
-        width: 120px;
+        width: 180px;  /* Smaller logo for mobile */
     }
 
+    /* Center and space out navigation links */
     .nav-links {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        gap: 20px; /* Adjusted spacing between links */
+        justify-content: center; /* Center the links */
+    }
+
+    .nav-links li {
+        display: inline-block;
+        text-align: center;
+    }
+
+    /* Adjust video height and text for mobile */
+    .video-background {
+        height: 100vh;  /* Keep full-screen height on mobile */
     }
 
     .bottom-text h1 {
-        font-size: 36px;
+        font-size: 36px;  /* Smaller font size for mobile */
+        margin-bottom: 15px;
     }
 
     .bottom-text p {
         font-size: 16px;
     }
 
+    /* Ensure contact form fits mobile screen width */
     .contact-container {
         padding: 20px;
         max-width: 90%;
     }
-}
 
-#thank-you-message {
-    display: none;
-    color: #ff4500;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-/* Stronger override for the email link color */
-a.email-link {
-    color: white !important;  /* Force the white color */
-    text-decoration: underline !important;  /* Force the underline */
-}
-
-a.email-link:visited {
-    color: white !important;  /* Ensure visited links also remain white */
-}
-
-a.email-link:hover {
-    color: #ff4500 !important;  /* Change to orange on hover */
-}
-
-a.email-link:active {
-    color: white !important; /* When clicking, it will remain white */
-}
-
-/* Media Query for Mobile Devices (max-width: 768px) */
-@media (max-width: 768px) {
-
-    /* Adjust logo size */
-    .logo-img {
-        width: 150px;  /* Make the logo smaller on mobile */
-        margin-top: 0;
-    }
-
-    /* Stack navigation links vertically */
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .nav-links li a {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-
-    /* Adjust the video background height */
-    .video-background {
-        height: 60vh;  /* Reduce video height on mobile */
-    }
-
-    /* Resize and align the text in the video section */
-    .bottom-text {
-        bottom: 20px;
-        padding: 0 10px;
-    }
-
-    .bottom-text h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-
-    .bottom-text p {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    /* Contact form container should be full width */
-    .contact-container {
-        padding: 20px;
-        max-width: 100%;  /* Full width on mobile */
-        margin: 0 auto;
-    }
-
-    /* Form inputs should be full width */
+    /* Ensure form input fields fit on mobile */
     .contact-form input,
     .contact-form textarea {
-        width: 100%;  /* Ensure inputs take full width on mobile */
+        width: 100%;
     }
 
-    /* Adjust submit button size and padding */
+    /* Adjust button for mobile */
     .contact-form button {
         font-size: 16px;
-        padding: 10px 0;
-    }
-
-    /* Adjust font size in form */
-    .contact-form label {
-        font-size: 16px;
-    }
-
-    /* Increase spacing in the contact section */
-    .contact-section {
-        padding: 100px 20px;
-    }
-
-    /* General body adjustments for mobile */
-    body {
-        font-size: 16px;
-        padding: 10px;
+        padding: 12px 0;
     }
 }
