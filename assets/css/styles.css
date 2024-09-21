@@ -11,13 +11,12 @@ body {
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
-    overflow-y: auto;
 }
 
 /* Header and Navigation Bar */
 header {
     background-color: transparent;
-    padding: 0; /* Remove extra padding to ensure alignment */
+    padding: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -25,8 +24,8 @@ header {
     z-index: 1000;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Ensure vertical alignment */
-    height: 70px; /* Fixed height for the header */
+    height: 80px;
+    align-items: center; /* This ensures that the logo and nav links are centered */
 }
 
 /* Navigation container */
@@ -41,13 +40,16 @@ header {
 /* Logo Styling */
 .logo {
     margin-left: 0;
+    display: inline-block; /* Independent block so it doesn't get affected by nav links */
 }
 
 .logo-img {
-    width: 320px; /* Default for desktop */
+    width: 320px;
     height: auto;
     transition: transform 0.3s ease-in-out;
-    display: block;
+    /* Align logo to the top-left corner without shifting */
+    position: relative;
+    top: 0;
 }
 
 .logo-img:hover {
@@ -71,9 +73,9 @@ header {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px 15px;
+    padding: 15px 15px; /* Adjust padding to control vertical positioning */
     transition: color 0.3s ease-in-out;
-    line-height: 70px; /* Match the line height with the header */
+    line-height: 80px; /* Keep the nav links aligned with the header */
 }
 
 .nav-links li a:hover {
@@ -122,11 +124,12 @@ header {
 
 /* Contact Page Styling */
 .contact-section {
-    padding: 150px 20px;
+    padding: 80px 20px; /* Reduce padding to avoid scrolling on desktop */
     background-color: #000;
     color: #fff;
     text-align: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 80px); /* Ensures the page fits the viewport height */
+    box-sizing: border-box;
 }
 
 .contact-container {
@@ -198,16 +201,14 @@ header {
 
 /* Responsive Design for Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-    /* Adjust logo size for mobile */
     .logo-img {
-        width: 180px;  /* Smaller logo for mobile */
+        width: 180px;  /* Reduced logo size for smaller screens */
     }
 
-    /* Center and space out navigation links */
     .nav-links {
         flex-direction: row;
-        gap: 20px; /* Adjusted spacing between links */
-        justify-content: center; /* Center the links */
+        gap: 15px;
+        justify-content: center;
     }
 
     .nav-links li {
@@ -215,33 +216,33 @@ header {
         text-align: center;
     }
 
-    /* Adjust video height and text for mobile */
+    .nav-links li a {
+        padding: 8px 10px; /* Reduce padding on mobile */
+        line-height: 60px;
+    }
+
     .video-background {
-        height: 100vh;  /* Keep full-screen height on mobile */
+        height: 100vh;
     }
 
     .bottom-text h1 {
-        font-size: 36px;  /* Smaller font size for mobile */
-        margin-bottom: 15px;
+        font-size: 36px;
     }
 
     .bottom-text p {
         font-size: 16px;
     }
 
-    /* Ensure contact form fits mobile screen width */
     .contact-container {
         padding: 20px;
         max-width: 90%;
     }
 
-    /* Ensure form input fields fit on mobile */
     .contact-form input,
     .contact-form textarea {
         width: 100%;
     }
 
-    /* Adjust button for mobile */
     .contact-form button {
         font-size: 16px;
         padding: 12px 0;
