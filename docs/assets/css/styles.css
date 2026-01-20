@@ -306,9 +306,10 @@ header.scrolled {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .logo-img {
-        width: 220px;
-        margin-top: -15px;
+    .logo-img,
+    #logo-canvas {
+        width: 180px;
+        margin-top: -32px;
         margin-bottom: -15px;
     }
 
@@ -328,9 +329,10 @@ header.scrolled {
         align-items: center;
     }
 
-    .logo-img {
-        width: 180px;
-        margin-top: -12px;
+    .logo-img,
+    #logo-canvas {
+        width: 160px;
+        margin-top: -30px;
         margin-bottom: -12px;
     }
 
@@ -370,9 +372,10 @@ header.scrolled {
         width: 95%;
     }
 
-    .logo-img {
-        width: 140px;
-        margin-top: -8px;
+    .logo-img,
+    #logo-canvas {
+        width: 130px;
+        margin-top: -25px;
         margin-bottom: -8px;
     }
 
