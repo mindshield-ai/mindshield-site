@@ -3,36 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindShield</title>
+    <title>MindShield - Autonomous Shuttle Technology</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <meta name="description" content="MindShield - Autonomous AI Solutions for Tomorrow">
-    <meta name="keywords" content="Autonomous Vehicles, AI, MindShield, UAE">
+    <meta name="description" content="MindShield - Pioneering autonomous shuttle technology developed in the UAE. Surro represents a new era of safe, intelligent transportation.">
+    <meta name="keywords" content="Autonomous Vehicles, AI, MindShield, UAE, Surro, Autonomous Shuttle, AVLab, Khalifa University">
 </head>
 <body>
     <header>
         <nav class="nav-container">
-            <div class="logo">
-                <img src="assets/images/mindshield-intro.gif" alt="MindShield Logo" class="logo-img">
-            </div>
+            <a href="#hero" class="logo">
+                <canvas id="logo-canvas" class="logo-img"></canvas>
+                <img src="assets/images/mindshield-intro.gif" alt="MindShield Logo" class="logo-img-source" style="display:none;">
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#vaas">VaaS</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Video Background Section -->
-    <section class="video-background">
+    <!-- Hero: Video Background Section -->
+    <section id="hero" class="video-background">
         <video autoplay muted loop id="bg-video">
             <source src="assets/videos/surro.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <div class="hero-content">
+            <p class="hero-tagline">A new era of autonomous shuttles</p>
+            <a href="#about" class="scroll-indicator">
+                <span></span>
+            </a>
+        </div>
     </section>
 
-    <!-- Text Positioned at Bottom -->
-    <section class="bottom-text">
-        <!-- <h1>Welcome to MindShield</h1> -->
-        <p style="font-size: 30px;">A new era of autonomous shuttles</p>
+    <!-- About Section -->
+    <section id="about" class="content-section">
+        <div class="section-container">
+            <h2 class="section-title">Meet Surro</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">Surro is an autonomous shuttle project fully developed in the UAE, representing the next generation of intelligent urban mobility.</p>
+                    <p>Under the MindShield initiative, Surro is being developed in close collaboration with <a href="https://avlab.io/" target="_blank" rel="noopener">Khalifa University's Autonomous Vehicle Lab (AVLab)</a>, UAE's first research lab dedicated to advancing autonomous vehicles for real-world deployment.</p>
+                    <p>Our mission is to deliver safe, reliable, and scalable autonomous transportation solutions that transform how people and goods move through cities.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Developed in</span>
+                        <span class="stat-value">UAE</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Research Partner</span>
+                        <span class="stat-value">Khalifa University</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Focus</span>
+                        <span class="stat-value">Safety-First AV</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="content-section section-dark">
+        <div class="section-container">
+            <h2 class="section-title">Technology Stack</h2>
+            <p class="section-subtitle">KU AVLab develops the complete software stack and hardware design for autonomous shuttle operations</p>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="assets/images/avlite.png" alt="AVLite Logo" class="tech-logo">
+                    <h3>AVLite</h3>
+                    <span class="tech-badge">High-Level Autonomy</span>
+                    <p>Advanced decision-making, perception, and planning capabilities enabling robust navigation and complex task execution for autonomous vehicles.</p>
+                    <a href="https://avlab.io/avlite/" target="_blank" rel="noopener" class="tech-link">Documentation →</a>
+                </div>
+                
+                <div class="tech-card">
+                    <img src="assets/images/orbit.png" alt="ORBit Logo" class="tech-logo">
+                    <h3>ORBit</h3>
+                    <span class="tech-badge">Mid-Level Autonomy</span>
+                    <p>Real-time risk assessment and high-level plan validation through independent evaluation and agentic verification, ensuring safe and reliable operation.</p>
+                    <a href="https://avlab.io/2-devops.html" target="_blank" rel="noopener" class="tech-link">Learn More →</a>
+                </div>
+                
+                <div class="tech-card">
+                    <img src="assets/images/pigeon.png" alt="Pigeon Logo" class="tech-logo">
+                    <h3>Pigeon</h3>
+                    <span class="tech-badge">Cloud Backend</span>
+                    <p>Scalable cloud-based coordination, data management, and backend services supporting multi-agent collaboration, remote monitoring, and digital twin integration.</p>
+                    <a href="https://avlab.io/2-devops.html" target="_blank" rel="noopener" class="tech-link">Explore →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VaaS Section -->
+    <section id="vaas" class="content-section">
+        <div class="section-container">
+            <h2 class="section-title">Validation as a Service</h2>
+            <p class="section-subtitle">Independent safety certification for autonomous vehicle providers</p>
+            
+            <div class="vaas-content">
+                <div class="vaas-description">
+                    <p class="lead">VaaS combines rule-based systems with advanced AI to certify safety and provide independent proof of safe execution for AV providers.</p>
+                    
+                    <div class="vaas-features">
+                        <div class="vaas-feature">
+                            <h4>Safe Stop</h4>
+                            <p>Real-time certification during execution, ensuring vehicles can safely halt when conditions require.</p>
+                        </div>
+                        <div class="vaas-feature">
+                            <h4>Safe Move</h4>
+                            <p>Validation for resuming movement from stopped states with verified safety conditions.</p>
+                        </div>
+                        <div class="vaas-feature">
+                            <h4>Execution Certificates</h4>
+                            <p>Detailed certification reports for policy makers as third-party validation evidence.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="vaas-inputs">
+                    <h4>API Inputs</h4>
+                    <ul class="input-list">
+                        <li><span class="input-icon">📷</span> Vision Data</li>
+                        <li><span class="input-icon">📡</span> LiDAR</li>
+                        <li><span class="input-icon">🛰</span> GNSS</li>
+                        <li><span class="input-icon">🗺</span> Global Plan</li>
+                    </ul>
+                    <a href="https://api.avlab.io" target="_blank" rel="noopener" class="btn btn-primary">Try the API Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership CTA Section -->
+    <section id="partnership" class="content-section section-cta">
+        <div class="section-container">
+            <h2 class="section-title">Partner With Us</h2>
+            <p class="cta-text">Interested in collaboration or integration opportunities?</p>
+            <div class="cta-buttons">
+                <a href="mailto:partnerships@mindshield.ai" class="btn btn-primary">partnerships@mindshield.ai</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Form</a>
+            </div>
+            <div class="partner-logos">
+                <a href="https://mindshield.ai" target="_blank" rel="noopener" class="partner-link">mindshield.ai</a>
+                <a href="https://avlab.io" target="_blank" rel="noopener" class="partner-link">avlab.io</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2026 MindShield. Developed in the UAE.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Logo animation on hover
+        const canvas = document.getElementById('logo-canvas');
+        const ctx = canvas.getContext('2d');
+        const gifImg = document.querySelector('.logo-img-source');
+        
+        // Simple approach: swap between static and animated
+        const logo = document.querySelector('.logo');
+        const staticImg = document.createElement('img');
+        staticImg.className = 'logo-img';
+        staticImg.alt = 'MindShield Logo';
+        
+        // Create animated version (hidden by default)
+        const animatedImg = document.createElement('img');
+        animatedImg.src = 'assets/images/mindshield-intro.gif';
+        animatedImg.className = 'logo-img';
+        animatedImg.alt = 'MindShield Logo';
+        animatedImg.style.display = 'none';
+        
+        // Wait for GIF to load, capture first frame
+        gifImg.onload = function() {
+            canvas.width = gifImg.naturalWidth;
+            canvas.height = gifImg.naturalHeight;
+            ctx.drawImage(gifImg, 0, 0);
+            staticImg.src = canvas.toDataURL();
+            
+            // Replace canvas with static image
+            canvas.style.display = 'none';
+            logo.insertBefore(staticImg, canvas);
+            logo.insertBefore(animatedImg, canvas);
+        };
+        
+        logo.addEventListener('mouseenter', function() {
+            staticImg.style.display = 'none';
+            animatedImg.src = '';
+            animatedImg.src = 'assets/images/mindshield-intro.gif';
+            animatedImg.style.display = 'block';
+        });
+        
+        logo.addEventListener('mouseleave', function() {
+            animatedImg.style.display = 'none';
+            staticImg.style.display = 'block';
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Header background on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
