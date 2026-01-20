@@ -598,7 +598,6 @@ header.scrolled {
     background: rgba(94, 234, 212, 0.15);
     color: #5eead4;
     border-radius: 20px;
-    margin-bottom: 20px;
 }
 
 .tech-card p {
@@ -606,6 +605,7 @@ header.scrolled {
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .tech-link {
@@ -617,6 +617,7 @@ header.scrolled {
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    margin-top: auto;
 }
 
 .tech-link:hover {
