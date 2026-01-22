@@ -12,8 +12,7 @@
     <header>
         <nav class="nav-container">
             <a href="#hero" class="logo">
-                <canvas id="logo-canvas" class="logo-img"></canvas>
-                <img src="assets/images/mindshield-intro.gif" alt="MindShield Logo" class="logo-img-source" style="display:none;">
+                <span class="logo-text">Surro</span>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
@@ -176,49 +175,6 @@
     </footer>
 
     <script>
-        // Logo animation on hover
-        const canvas = document.getElementById('logo-canvas');
-        const ctx = canvas.getContext('2d');
-        const gifImg = document.querySelector('.logo-img-source');
-        
-        // Simple approach: swap between static and animated
-        const logo = document.querySelector('.logo');
-        const staticImg = document.createElement('img');
-        staticImg.className = 'logo-img';
-        staticImg.alt = 'MindShield Logo';
-        
-        // Create animated version (hidden by default)
-        const animatedImg = document.createElement('img');
-        animatedImg.src = 'assets/images/mindshield-intro.gif';
-        animatedImg.className = 'logo-img';
-        animatedImg.alt = 'MindShield Logo';
-        animatedImg.style.display = 'none';
-        
-        // Wait for GIF to load, capture first frame
-        gifImg.onload = function() {
-            canvas.width = gifImg.naturalWidth;
-            canvas.height = gifImg.naturalHeight;
-            ctx.drawImage(gifImg, 0, 0);
-            staticImg.src = canvas.toDataURL();
-            
-            // Replace canvas with static image
-            canvas.style.display = 'none';
-            logo.insertBefore(staticImg, canvas);
-            logo.insertBefore(animatedImg, canvas);
-        };
-        
-        logo.addEventListener('mouseenter', function() {
-            staticImg.style.display = 'none';
-            animatedImg.src = '';
-            animatedImg.src = 'assets/images/mindshield-intro.gif';
-            animatedImg.style.display = 'block';
-        });
-        
-        logo.addEventListener('mouseleave', function() {
-            animatedImg.style.display = 'none';
-            staticImg.style.display = 'block';
-        });
-
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
