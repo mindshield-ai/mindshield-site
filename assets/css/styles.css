@@ -3,7 +3,14 @@
 
 @font-face {
     font-family: 'TT Lakes Neue';
-    src: url('assets/fonts/tt-lakes-neue.woff2') format('woff2');
+    src: url('../fonts/TT Lakes Neue Trial Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'TT Lakes Neue';
+    src: url('../fonts/TT Lakes Neue Trial Medium.ttf') format('truetype');
+    font-weight: 500;
 }
 
 body {
@@ -57,19 +64,17 @@ header {
     text-decoration: none;
 }
 
-.logo-img,
-#logo-canvas {
-    width: 180px;
-    height: auto;
-    display: block;
-    margin-top: -35px;
-    margin-bottom: -15px;
-    transition: transform 0.3s ease-in-out;
+.logo-text {
+    font-family: 'TT Lakes Neue', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0;
+    transition: opacity 0.3s ease;
 }
 
-.logo:hover .logo-img,
-.logo:hover #logo-canvas {
-    transform: scale(1.05);
+.logo:hover .logo-text {
+    opacity: 0.85;
 }
 
 .nav-links {
@@ -86,9 +91,9 @@ header {
 .nav-links li a {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
     text-transform: uppercase;
     padding: 12px 24px;
     border-radius: 4px;
@@ -187,11 +192,8 @@ header {
         width: 92%;
     }
 
-    .logo-img,
-    #logo-canvas {
-        width: 150px;
-        margin-top: -28px;
-        margin-bottom: -10px;
+    .logo-text {
+        font-size: 20px;
     }
 }
 
@@ -401,11 +403,8 @@ header.scrolled {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .logo-img,
-    #logo-canvas {
-        width: 180px;
-        margin-top: -32px;
-        margin-bottom: -15px;
+    .logo-text {
+        font-size: 22px;
     }
 
     .nav-links li a {
@@ -443,11 +442,8 @@ header.scrolled {
         width: 95%;
     }
 
-    .logo-img,
-    #logo-canvas {
-        width: 130px;
-        margin-top: -22px;
-        margin-bottom: -8px;
+    .logo-text {
+        font-size: 18px;
     }
 
     .bottom-text {
