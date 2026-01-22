@@ -12,7 +12,12 @@
             <a href="index.html" class="logo">
                 <img src="assets/images/mindshield-intro.gif" alt="MindShield Logo" class="logo-img">
             </a>
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#technology">Technology</a></li>
                 <li><a href="index.html#vaas">VaaS</a></li>
@@ -73,6 +78,26 @@
                 }
             } catch (error) {
                 alert('There was a problem submitting the form. Please try again.');
+            }
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            const isExpanded = hamburger.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
     </script>
